@@ -172,8 +172,6 @@ class VWebView(private val context: Context, attrs: AttributeSet?) : WebView(
         // JavaScript interface
         addJavascriptInterface(VJavaScriptInterface(activity), VJavaScriptInterface.INTERFACE_NAME)
 
-        setLayerType(LAYER_TYPE_HARDWARE, null)
-
         // Zoom controls
         webSettings.setSupportZoom(true)
         webSettings.builtInZoomControls = true
@@ -237,6 +235,17 @@ class VWebView(private val context: Context, attrs: AttributeSet?) : WebView(
         settingsPreference.getIntBool(SettingsKeys.isJavaScriptEnabled).apply {
             webSettings.javaScriptEnabled = this
             webSettings.javaScriptCanOpenWindowsAutomatically = this
+        }
+
+        // Rendering Layers
+        settingsPreference.getInt(SettingsKeys.renderingLayers).takeIf { it in 0..2 }?.let {
+            setLayerType(it, null)
+            Log.d(LOG_TAG, "Set render layer: $it")
+        } ?: {
+            // Invalid layer type, reset to default
+            settingsPreference.setInt(SettingsKeys.renderingLayers, LAYER_TYPE_HARDWARE)
+            setLayerType(LAYER_TYPE_HARDWARE, null)
+            Log.d(LOG_TAG, "Invalid type, reset render layer")
         }
 
         // HTTPS enforce setting
