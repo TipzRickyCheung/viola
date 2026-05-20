@@ -353,6 +353,10 @@
     <string name="pref_enable_cookies_title">Cookies</string>
     <!-- Settings: Web features: Enable Cookies summary -->
     <string name="pref_enable_cookies_summary">接受來自所有網站的 Cookies。</string>
+    <!-- Settings: Web features: Rendering layers title -->
+    <string name="pref_rendering_layers_title">Rendering layers</string>
+    <!-- Settings: Web features: Rendering layers summary -->
+    <string name="pref_rendering_layers_summary">Choose the layer type of off-screen buffer backing WebView.</string>
     <!-- Settings: Web features: Bussin WebX category title -->
     <string name="pref_web_webx_category_title">Bussin WebX</string>
     <!-- Settings: Web features: Bussin WebX category summary -->
