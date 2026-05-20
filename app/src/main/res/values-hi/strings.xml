@@ -355,6 +355,10 @@
     <string name="pref_enable_cookies_title">कूकीज़</string>
     <!-- Settings: Web features: Enable Cookies summary -->
     <string name="pref_enable_cookies_summary">वेबसाइटों से सभी कुकीज़ स्वीकार करें।</string>
+    <!-- Settings: Web features: Rendering layers title -->
+    <string name="pref_rendering_layers_title">Rendering layers</string>
+    <!-- Settings: Web features: Rendering layers summary -->
+    <string name="pref_rendering_layers_summary">Choose the layer type of off-screen buffer backing WebView.</string>
     <!-- Settings: Web features: Bussin WebX category title -->
     <string name="pref_web_webx_category_title">बस्सिन वेबएक्स</string>
     <!-- Settings: Web features: Bussin WebX category summary -->
